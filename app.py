@@ -256,17 +256,17 @@ col_before, col_after = st.columns(2)
 
 with col_before:
     st.markdown("**Before Processing (Original Image)**")
-    st.image(cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB), use_container_width=True)
+    st.image(cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB), width="stretch")
     st.caption(f"Original Resolution: {w} x {h} pixels")
 
 with col_after:
     if attack_choice == "None (Clean)":
         st.markdown("**After Processing (Watermarked Image)**")
-        st.image(cv2.cvtColor(watermarked_img, cv2.COLOR_BGR2RGB), use_container_width=True)
+        st.image(cv2.cvtColor(watermarked_img, cv2.COLOR_BGR2RGB), width="stretch")
         st.caption("Clean Watermarked Image")
     else:
         st.markdown(f"**After Processing (Watermarked + {attack_choice})**")
-        st.image(cv2.cvtColor(attacked_img, cv2.COLOR_BGR2RGB), use_container_width=True)
+        st.image(cv2.cvtColor(attacked_img, cv2.COLOR_BGR2RGB), width="stretch")
         st.caption(f"Distortion Applied: {attack_choice}")
 
 # =========================================================================

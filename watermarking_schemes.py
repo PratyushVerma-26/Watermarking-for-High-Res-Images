@@ -37,9 +37,10 @@ class SpatialLSBWatermarker:
             
         tiled_bits = np.resize(bits, len(flat_img))
         
-        # Clear LSB and embed bit
-        mask = ~(1 << (self.bit_depth - 1))
-        mod_flat = (flat_img & mask) | (tiled_bits << (self.bit_depth - 1))
+        # Clear LSB and embed bit using safe 8-bit mask
+        bit_shift = self.bit_depth - 1
+        mask = np.uint8(0xFF ^ (1 << bit_shift))
+        mod_flat = ((flat_img & mask) | (tiled_bits.astype(np.uint8) << bit_shift)).astype(np.uint8)
         
         if len(image.shape) == 3:
             watermarked[:, :, 0] = mod_flat.reshape(image.shape[:2])
