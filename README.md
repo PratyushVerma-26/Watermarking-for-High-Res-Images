@@ -37,10 +37,18 @@ pip install -r requirements.txt
 *(Dependencies: `opencv-python`, `pywavelets`, `numpy`, `matplotlib`, `streamlit`, `pandas`, `openpyxl`, `scipy`)*
 
 ### Step 3: Run the Interactive Web Dashboard
-Launch the web interface locally:
+You can launch the dashboard using any of the following commands:
+
+**Option A (Recommended launcher script):**
 ```bash
-streamlit run app.py
+python run_dashboard.py
 ```
+
+**Option B (Direct Python module):**
+```bash
+python -m streamlit run app.py
+```
+
 Open **`http://localhost:8501`** in your browser to:
 1. Select **"📤 Upload Your Own Image"** to test your own high-resolution files (1080p, 2K, 4K, 8K).
 2. Choose a watermarking scheme (e.g., *Proposed: Adaptive HVS DWT-DCT*).
