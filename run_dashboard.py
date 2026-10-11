@@ -28,7 +28,7 @@ def main():
     ]
     
     print("=" * 60)
-    print("🚀 Starting Adaptive Watermarking Dashboard...")
+    print("Starting Adaptive Watermarking Dashboard...")
     print(f"Command: {' '.join(cmd)}")
     print("=" * 60)
     
